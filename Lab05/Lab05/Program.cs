@@ -6,24 +6,36 @@ namespace Lab05
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Line 1");
-            goto line4;
-        line2:
-            Console.WriteLine("Line 2");
-            goto line9;
-            Console.WriteLine("Line 3");
-        line4:
-            Console.WriteLine("Line 4");
-            Console.WriteLine("Line 5");
-            goto line2;
-            Console.WriteLine("Line 6");
-            goto line10;
-            Console.WriteLine("Line 7");
-            Console.WriteLine("Line 8");
-        line9:
-            Console.WriteLine("Line 9");
-        line10:;
-            //Console.WriteLine("Line 10");
+            Console.WriteLine("Coffee sizes: 1=Small 2=Medium 3=Large");
+            Console.Write("Please enter your selection: ");
+            string s = Console.ReadLine();
+            int n = int.Parse(s);
+            int cost = 0;
+            switch (n)
+            {
+                case 1:
+                    cost += 25;
+                    break;
+                case 2:
+                    cost += 25;
+                    goto case 1;
+                case 3:
+                    cost += 50;
+                    goto case 1;
+                default:
+                    Console.WriteLine("Invalid selection.");
+                    break;
+            }
+            if (cost != 0)
+            {
+                Console.WriteLine("Please insert {0} Bath.", cost);
+            }
+            Console.WriteLine("Thank you for your business.");
+
+            // Keep the console open in debug mode.
+            Console.WriteLine("Press any key to exit.\n");
+            Console.ReadKey();
+            Main(args);
         }
     }
 }
