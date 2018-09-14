@@ -6,15 +6,19 @@ namespace Lab05
     {
         static void Main(string[] args)
         {
-            object o2 = null;
+            int a = 0;
             try
             {
-                int i2 = (int)o2;
-                Console.WriteLine("i2 = {0}", i2);
+
+                Console.WriteLine(100 / a);
             }
-            catch
+            catch (NullReferenceException e)
             {
-                Console.WriteLine("Error, null object assignment.");
+                Console.WriteLine(e.Message);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }
