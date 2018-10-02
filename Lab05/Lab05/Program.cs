@@ -4,21 +4,16 @@ namespace Lab05
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            try
-            {
-                int value = 800000000;
-                checked // check for overflow
-                {
-                    int square = value * value;
-                    Console.WriteLine("{0} ^ 2 = {1}", value, square);
-                }
-            }
-            catch (OverflowException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            int a = 10;
+            int b = 20;
+            int c = add(a, b);
         }
+        private static int add(int a, int b)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
