@@ -6,9 +6,16 @@ namespace Lab05
     {
         static void Main(string[] args)
         {
-            int a = int.MaxValue;
-            a *= 2;
-            Console.WriteLine(a);
+            try{
+                int a = 0;
+                int b = 10;
+                b /= a;
+                Console.WriteLine(a);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
