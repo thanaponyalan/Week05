@@ -6,28 +6,34 @@ namespace Lab05
     {
         public static void Main()
         {
-            Console.Write("Input your grade (A, B, C, D or F) : ");
+            Console.Write("Input first three char of day(sun, mon, tue, wed, thu, fri or sat) : ");
             string gradeString = Console.ReadLine();
             string message;
-            switch (gradeString.ToUpper())
+            switch (gradeString.ToLower())
             {
-                case "A":
-                    message = "Excellent";
+                case "sun":
+                    message = "Sunday, color Red";
                     break;
-                case "B":
-                    message = "Good";
+                case "mon":
+                    message = "Monday, color Yellow";
                     break;
-                case "C":
-                    message = "Cool";
+                case "tue":
+                    message = "Tuesday, color Pink";
                     break;
-                case "D":
-                    message = "Try";
+                case "wed":
+                    message = "Wednesday, color Green";
                     break;
-                case "F":
-                    message = "Get out!!";
+                case "thu":
+                    message = "Thursday, color Orange";
+                    break;
+                case "fri":
+                    message = "Friday, color Blue";
+                    break;
+                case "sat":
+                    message = "Saturday, color Purple";
                     break;
                 default:
-                    message = "Incorrect grade";
+                    message = "Incorrect day";
                     break;
             }
             Console.WriteLine(message);
