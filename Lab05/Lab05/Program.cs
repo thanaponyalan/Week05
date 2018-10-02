@@ -6,13 +6,16 @@ namespace Lab05
     {
         static void Main(string[] args)
         {
-            try{
-                int a = 0;
-                int b = 10;
-                b /= a;
-                Console.WriteLine(a);
+            try
+            {
+                int value = 800000000;
+                checked // check for overflow
+                {
+                    int square = value * value;
+                    Console.WriteLine("{0} ^ 2 = {1}", value, square);
+                }
             }
-            catch (DivideByZeroException e)
+            catch (OverflowException e)
             {
                 Console.WriteLine(e.Message);
             }
